@@ -1,0 +1,15 @@
+FROM jenkinsci/jnlp-slave
+
+# File Author / Maintainer
+MAINTAINER Oguz Dag
+
+ENV KUBECTL_VERSION=v1.10.1
+
+USER root
+
+# Install kubectl
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
+  && chmod +x ./kubectl \
+  && mv ./kubectl /usr/local/bin/kubectl
+
+USER jenkins
