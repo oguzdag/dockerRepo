@@ -1,7 +1,7 @@
 FROM jenkinsci/jnlp-slave
 
 # File Author / Maintainer
-MAINTAINER Oguz Dag
+LABEL maintainer="oguz.dag@gmail.com"
 
 ENV KUBECTL_VERSION=v1.10.1
 
